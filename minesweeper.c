@@ -41,23 +41,31 @@ int main(){
             int mines[4];
             printf("\nEnter 4 mines (1-16):\n");
 
-            for(i=0;i<4;i++){
-                scanf("%d",&mines[i]);
-                while(getchar()!='\n');
+            for(i=0; i<4; i++){
+    int duplicate = 0;
 
-                if(mines[i]<1 || mines[i]>16){
-                    printf("Invalid!\n");
-                    i--; 
-				continue;
-                }
+    scanf("%d", &mines[i]);
+    while(getchar() != '\n');
 
-                for(j=0;j<i;j++){
-                    if(mines[i]==mines[j]){
-                        printf("Duplicate!\n");
-                        i--;
-                    }
-                }
-            }
+    if(mines[i] < 1 || mines[i] > 16){
+        printf("Invalid! Enter a number from 1 to 16.\n");
+        i--;
+        continue;
+    }
+
+    for(j=0; j<i; j++){
+        if(mines[i] == mines[j]){
+            duplicate = 1;
+            break;
+        }
+    }
+
+    if(duplicate){
+        printf("Duplicate! Choose a different cell.\n");
+        i--;
+        continue;
+    }
+}
 
             int safe=0, turn=0;
 
