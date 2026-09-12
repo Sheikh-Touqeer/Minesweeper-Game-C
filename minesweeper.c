@@ -103,8 +103,7 @@ int main(){
                 
 				if(bomb){
                     grid[r][c]='M';
-
-                    printf("\nBOOM! You Lose\n");
+printf("\nBOOM! %s hit a mine!\n%s wins the game!\n", player2, player1);
 
                     FILE *f=fopen("minesweeper_log.txt","a");
                     fprintf(f,"%s,%s,%s,%d,LOSE\n",player1,player2,player1,turn);
@@ -136,7 +135,7 @@ int main(){
 
                 if(safe==12){
 
-                    printf("\nYOU WIN!\n");
+                   printf("\nCongratulations %s! You cleared all safe cells and won the game!\n", player2);
 
                     FILE *f=fopen("minesweeper_log.txt","a");
                     fprintf(f,"%s,%s,%s,%d,WIN\n",player1,player2,player2,turn);
