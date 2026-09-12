@@ -28,6 +28,13 @@ A console-based Minesweeper game developed in C as a programming project. The pr
 - Loops
 
 ## How It Works
+### Player Roles
+
+- Player 1 — Mine Setter: Selects four unique mine positions on the 4×4 board.
+- Player 2 — Explorer: Opens cells and attempts to clear all 12 safe cells without hitting a mine.
+- If the Explorer hits a mine, Player 1 wins.
+- If the Explorer successfully opens all 12 safe cells, Player 2 wins.
+
 
 At the start of a new game, player names are entered and four mine positions are selected for the 4×4 board.
 
